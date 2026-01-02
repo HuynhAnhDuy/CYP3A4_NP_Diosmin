@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 
 # Cấu hình tên file đầu ra: chỉ cần chỉnh 1 chỗ
-BASE_PREFIX = "Hepatotoxicity"
+BASE_PREFIX = "CYP3A4"
 
 # Kiểm tra thư viện LightGBM
 try:
@@ -102,7 +102,7 @@ def run_all_feature_sets(feature_sets, num_runs=3):
 
     # Tạo thư mục chứa y_prob theo timestamp (cho LGBM + Hepa)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    prob_folder = f"Prob_Hepa_LGBM/Prob_{timestamp}"
+    prob_folder = f"Prob_CYP3A_LGBM/Prob_{timestamp}"
     os.makedirs(prob_folder, exist_ok=True)
     print(f"\n📁 Sẽ lưu y_prob vào thư mục: {prob_folder}")
 
@@ -181,7 +181,7 @@ def run_all_feature_sets(feature_sets, num_runs=3):
 # === Hàm chính ===
 def main():
     # 6 feature sets đơn như bạn dự định dùng
-    feature_sets = ["ecfp", "rdkit", "maccs", "phychem", "estate", "substruct","all_features","selected_features"]
+    feature_sets = ["ecfp", "rdkit", "maccs", "phychem", "estate", "substruct","all_features","selected_features","selfies"]
 
     results_by_fs = run_all_feature_sets(feature_sets, num_runs=3)
 

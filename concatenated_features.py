@@ -33,16 +33,16 @@ def main():
 
     # Train
     merge_feature_files(
-        prefix="Hepatotoxicity_x_train",
+        prefix="CYP3A4_external_x_train",
         feature_suffixes=feature_suffixes,
-        output_name="Hepatotoxicity_x_train_all_features.csv"
+        output_name="CYP3A4_external_x_train_all_features.csv"
     )
 
     # Test
     merge_feature_files(
-        prefix="Hepatotoxicity_x_external",
+        prefix="CYP3A4_external_x_test",
         feature_suffixes=feature_suffixes,
-        output_name="Hepatotoxicity_x_external_all_features.csv"
+        output_name="CYP3A4_external_x_test_all_features.csv"
     )
 
 

@@ -1,0 +1,10 @@
+Index,Name,y_prob,y_pred
+0,Diosmin,0.13527428,0
+1,Resveratrol,0.79403657,1
+2,Bergamottin,0.10757908,0
+3,"6’,7’-Dihydroxybergamottin",0.1350751,0
+4,Gomisins,0.6240742,1
+5,Tannic acid,0.21234407,0
+6,Silymarin,0.5813696,1
+7,Silybin,0.5813696,1
+8,Dehydrosilybin,0.34058845,0

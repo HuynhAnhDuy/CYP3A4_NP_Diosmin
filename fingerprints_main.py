@@ -137,25 +137,45 @@ def calculate_substructure_counts(df, smiles_col):
     """
 
     substructure_smarts = {
-        "Nitro": "[O-][N+](=O)[!#8]",
-        "Aromatic_Ring": "a1aaaaa1",
-        "Hydroxyl_Aliphatic": "[CX4][OH]",
-        "Phenol": "c[OH]",
-        "Halogen": "[F,Cl,Br,I]",
-        "Ketone": "C(=O)C",
-        "Aldehyde": "[CX3H1](=O)[#6,#1]",
-        "Ester": "C(=O)OC",
-        "Carboxylic_Acid": "C(=O)[OH]",
-        "Amine_Primary": "[NX3;H2]",
-        "Amine_Secondary": "[NX3;H1][#6]",
-        "Amide": "C(=O)N",
-        "Sulfonamide": "S(=O)(=O)N",
-        "Thiol": "[SH]",
-        "Thioether": "C-S-C",
-        "Imidazole": "c1cnc[nH]1",
-        "Thiazole": "c1ncsc1",
-        "Heteroaromatic_N": "n1cccc1",
+    # --- Nhóm cơ bản, giữ lại như trên ---
+    "Nitro": "[O-][N+](=O)[!#8]",
+    "Aromatic_Ring_6": "c1ccccc1",
+    "Heteroaromatic_Ring": "[n,o,s]1cccc1",
+
+    "Hydroxyl_Aliphatic": "[CX4][OH]",
+    "Phenol": "c[OH]",
+    "Halogen": "[F,Cl,Br,I]",
+
+    "Ketone": "C(=O)[#6]",
+    "Aldehyde": "[CX3H1](=O)[#6,#1]",
+    "Ester": "C(=O)O[#6]",
+    "Carboxylic_Acid": "C(=O)[OH]",
+    "Amide": "C(=O)N",
+
+    "Thiol": "[SH]",
+    "Thioether": "[#6]-S-[#6]",
+    "Sulfonamide": "S(=O)(=O)N",
+
+    # --- Amine / center base ---
+    "Amine_Primary_Aliphatic": "[NX3;H2][CX4]",
+    "Amine_Secondary_Aliphatic": "[NX3;H1]([CX4])[CX4]",
+    "Amine_Tertiary_Aliphatic": "[NX3;H0]([CX4])([CX4])[CX4]",
+    "Amine_Aniline": "c[NH2]",
+
+    # --- Heterocycle & motif thường gặp ở CYP3A4 ligands ---
+    "Pyridine": "n1cccc1",
+    "Imidazole_Like": "c1ncc[nH]1",      # motif azole 5 cạnh
+    "Triazole_Like": "n1ncnn1",          # motif triazole 5 cạnh (xấp xỉ)
+    "Indole": "c1cc2ccccc2[nH]1",
+    "Piperidine": "N1CCCCC1",
+    "Morpholine": "O1CCNCC1",
+    "Piperazine": "N1CCNCC1",
+
+    # --- Một số vòng/nhóm chức hay gặp ---
+    "Furan": "c1ccoc1",
+    "Coumarin_Like": "c1ccc2oc(=O)cc2c1",
     }
+
 
     patterns = {name: Chem.MolFromSmarts(s) for name, s in substructure_smarts.items()}
 
@@ -218,11 +238,11 @@ def process_and_save_features(df, smiles_col, prefix):
 
 # --------------------------------------------------------------------- #
 def main():
-    #x_train = pd.read_csv("/home/andy/andy/hepatoxicity_VoiVoi/Hepatotoxicity_x_train.csv", index_col=0)
-    x_test  = pd.read_csv("/home/andy/andy/hepatoxicity_VoiVoi/PAs_VoiVoi_preprocess.csv", index_col=0)
+    x_train = pd.read_csv("/home/andy/andy/CYP3A4_NP_Diosmin/CYP3A4_preprocess.csv", index_col=0)
+    #x_test  = pd.read_csv("/home/andy/andy/CYP3A4_NP_Diosmin/CYP3A4_x_external_preprocess.csv", index_col=0)
 
-    #process_and_save_features(x_train, "canonical_smiles", "Hepatotoxicity_x_train")
-    process_and_save_features(x_test,  "canonical_smiles", "Hepatotoxicity_x_external")
+    process_and_save_features(x_train, "canonical_smiles", "CYP3A4_full")
+    #process_and_save_features(x_test,  "canonical_smiles", "CYP3A4_external_x_test")
 
 
 if __name__ == "__main__":

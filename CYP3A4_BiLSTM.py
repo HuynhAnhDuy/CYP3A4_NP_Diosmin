@@ -15,7 +15,7 @@ import os
 from datetime import datetime
 
 # ===== CHỈ CHỈNH 1 DÒNG NÀY =====
-BASE_PREFIX = "Hepatotoxicity"
+BASE_PREFIX = "CYP3A4"
 
 # ===== BUILD BiLSTM MODEL =====
 def build_model(input_dim):
@@ -111,7 +111,7 @@ def run_all_feature_sets(feature_sets, num_runs=3):
 
     # === Tạo folder timestamp để lưu xác suất ===
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    prob_folder = f"Prob_Hepa_BiLSTM/Prob_{timestamp}"
+    prob_folder = f"Prob_CYP3A_BiLSTM/Prob_{timestamp}"
     os.makedirs(prob_folder, exist_ok=True)
     print(f"\n📁 Sẽ lưu file xác suất tại: {prob_folder}")
 
@@ -196,8 +196,7 @@ def main():
         "phychem",
         "estate",
         "substruct",          # phải trùng với hậu tố trong tên file: *_substruct.csv
-        "all_features",       # *_all_features.csv
-        "selected_features"   # *_selected_features.csv
+        "selfies"   
     ]
 
     results_by_fs = run_all_feature_sets(feature_sets, num_runs=3)

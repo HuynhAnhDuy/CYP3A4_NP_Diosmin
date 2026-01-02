@@ -1,0 +1,2 @@
+Accuracy,Balanced_Accuracy,AUROC,AUPRC,MCC,Precision,Sensitivity,Specificity,F1
+0.583 ± 0.004,0.500 ± 0.005,0.501 ± 0.008,0.320 ± 0.007,0.001 ± 0.010,0.318 ± 0.008,0.275 ± 0.010,0.726 ± 0.006,0.295 ± 0.009

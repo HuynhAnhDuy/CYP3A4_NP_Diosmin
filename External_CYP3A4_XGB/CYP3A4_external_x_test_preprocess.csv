@@ -1,0 +1,10 @@
+,No,Name,Label,canonical_smiles
+0,1,Diosmin,1.0,COc1ccc(-c2cc(=O)c3c(O)cc(O[C@@H]4O[C@H](CO[C@@H]5O[C@@H](C)[C@H](O)[C@@H](O)[C@H]5O)[C@@H](O)[C@H](O)[C@H]4O)cc3o2)cc1O
+1,2,Resveratrol,1.0,Oc1ccc(/C=C/c2cc(O)cc(O)c2)cc1
+2,3,Bergamottin,1.0,CC(C)=CCC/C(C)=C/COc1c2ccoc2cc2oc(=O)ccc12
+3,4,"6’,7’-Dihydroxybergamottin",1.0,C/C(=C\COc1c2ccoc2cc2oc(=O)ccc12)CCC(O)C(C)(C)O
+4,5,Gomisins,1.0,COc1cc2c(c(OC)c1OC)-c1c(cc(OC)c(OC)c1OC)C[C@](C)(O)[C@@H](C)C2
+5,6,Tannic acid,1.0,O=C(OC[C@H]1O[C@@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@@H]1OC(=O)c1cc(O)c(O)c(OC(=O)c2cc(O)c(O)c(O)c2)c1)c1cc(O)c(O)c(OC(=O)c2cc(O)c(O)c(O)c2)c1
+6,7,Silymarin,1.0,COc1cc(C2Oc3cc(C4Oc5cc(O)cc(O)c5C(=O)C4O)ccc3OC2CO)ccc1O
+7,8,Silybin,1.0,COc1cc([C@H]2Oc3cc([C@H]4Oc5cc(O)cc(O)c5C(=O)[C@@H]4O)ccc3O[C@@H]2CO)ccc1O
+8,9,Dehydrosilybin,1.0,COc1cc([C@H]2Oc3cc(-c4oc5cc(O)cc(O)c5c(=O)c4O)ccc3O[C@@H]2CO)ccc1O

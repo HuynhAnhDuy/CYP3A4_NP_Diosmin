@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 
 # ==== Chỉ cần chỉnh 1 dòng này nếu đổi prefix ====
-BASE_PREFIX = "Hepatotoxicity"
+BASE_PREFIX = "CYP3A4"
 
 # XGBoost
 try:
@@ -112,7 +112,7 @@ def run_all_feature_sets(feature_sets, num_runs=3):
 
     # === Tạo thư mục chứa y_prob theo timestamp ===
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    prob_folder = f"Prob_Hepa_XGB/Prob_{timestamp}"
+    prob_folder = f"Prob_CYP3A_XGB/Prob_{timestamp}"
     os.makedirs(prob_folder, exist_ok=True)
     print(f"\n📁 Sẽ lưu y_prob vào: {prob_folder}")
 
@@ -199,7 +199,8 @@ def main():
         "estate",
         "substruct",         # Hepatotoxicity_x_train_substruct.csv
         "all_features",      # Hepatotoxicity_x_train_all_features.csv
-        "selected_features"  # Hepatotoxicity_x_train_selected_features.csv
+        "selected_features", # Hepatotoxicity_x_train_selected_features.csv
+        "selfies"
     ]
 
     results_by_fs = run_all_feature_sets(feature_sets, num_runs=3)

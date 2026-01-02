@@ -5,8 +5,8 @@ import numpy as np
 
 
 def load_data():
-    X_train_all = pd.read_csv("Hepatotoxicity_x_train_all_features.csv")
-    X_test_all  = pd.read_csv("Hepatotoxicity_x_test_all_features.csv")
+    X_train_all = pd.read_csv("CYP3A4_x_train_all_features.csv")
+    X_test_all  = pd.read_csv("CYP3A4_x_test_all_features.csv")
 
     train_index = X_train_all["Index"].copy()
     test_index  = X_test_all["Index"].copy()
@@ -16,7 +16,7 @@ def load_data():
     X_test_all  = X_test_all.drop(columns=["Index"])
 
     # Chỉnh lại đường dẫn / tên cột label cho đúng file của bạn
-    y_train = pd.read_csv("Hepatotoxicity_y_train.csv")["Label"]
+    y_train = pd.read_csv("CYP3A4_y_train.csv")["Label"]
 
     return X_train_all, X_test_all, y_train, train_index, test_index
 
@@ -99,20 +99,20 @@ def feature_selection_ecfp_rdkit_only():
           X_train_sel_df.shape)
 
     # 6) Lưu lại
-    X_train_sel_df.to_csv("Hepatotoxicity_x_train_selected_features.csv", index=False)
-    X_test_sel_df.to_csv("Hepatotoxicity_x_test_selected_features.csv", index=False)
+    X_train_sel_df.to_csv("CYP3A4_x_train_selected_features.csv", index=False)
+    X_test_sel_df.to_csv("CYP3A4_x_test_selected_features.csv", index=False)
 
     # Ngoài ra lưu danh sách fingerprint đã chọn (chỉ ECFP/RDKit)
     pd.Series(selected_fp_cols).to_csv(
-        "Hepatotoxicity_selected_fp_feature_names.csv",
+        "CYP3A4_selected_fp_feature_names.csv",
         index=False,
         header=["feature_name"]
     )
 
     print("✅ Saved selected features:")
-    print("   Hepatotoxicity_x_train_selected_features.csv")
-    print("   Hepatotoxicity_x_test_selected_features.csv")
-    print("   Hepatotoxicity_selected_fp_feature_names.csv")
+    print("   CYP3A4_x_train_selected_features.csv")
+    print("   CYP3A4_x_test_selected_features.csv")
+    print("   CYP3A4_selected_fp_feature_names.csv")
 
 
 if __name__ == "__main__":
