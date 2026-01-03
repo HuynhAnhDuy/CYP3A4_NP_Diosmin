@@ -42,8 +42,7 @@ def main():
     merge_feature_files(
         prefix="CYP3A4_external_x_test",
         feature_suffixes=feature_suffixes,
-        output_name="CYP3A4_external_x_test_all_features.csv"
-    )
+        output_name="CYP3A4_external_x_test_all_features.csv")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,8 @@
+XGB model,BACC,Error
+ECFP,0.839,0.001
+RDKit,0.808,0.002
+MACCS keys,0.83,0.002
+PCP,0.803,0.001
+EState,0.827,0.001
+Substructure,0.77,0.002
+Concatenated features,0.86,0.004

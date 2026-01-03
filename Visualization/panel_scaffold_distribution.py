@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def plot_scaffold_enrichment_minimal(
     csv_path: str,
-    out_dir: str = "enrichment_panel",
+    out_dir: str = "Visualization",
     save_name: str = "scaffold_enrichment_distribution",
     min_n_total: int = 3,
     size_range: tuple = (20, 400),
@@ -63,11 +63,11 @@ def plot_scaffold_enrichment_minimal(
 
     # ---- Plot ----
     fig, ax = plt.subplots(figsize=(6.8, 6.0))
-    ax.scatter(df["mean_shap"].values, y, s=sizes, alpha=alpha)
+    ax.scatter(df["mean_shap"].values, y, s=sizes, alpha=alpha, color='green')
 
     # Reference lines (visual aid): dashed + slightly transparent
-    ax.axvline(0.0, linestyle="--", linewidth=1.0, alpha=0.6)
-    ax.axhline(baseline, linestyle="--", linewidth=1.0, alpha=0.6)
+    ax.axvline(0.0, linestyle="--", linewidth=1.0, alpha=0.7,color='black')
+    ax.axhline(baseline, linestyle="--", linewidth=1.0, alpha=0.7,color='black')
 
     ax.set_xlabel(
         f"Mean SHAP (scaffold-level, n_total ≥ {min_n_total})",
@@ -91,16 +91,16 @@ def plot_scaffold_enrichment_minimal(
             f"SHAP+ & enriched inactive: {len(shap_pos_ar_lo)}"
         )
         ax.text(
-            0.98, 0.02,
+            0.98, 0.05,
             stats_text,
             transform=ax.transAxes,
             ha="right", va="bottom",
-            fontsize=11,
-            color="blue",
+            fontsize=12,
+            color="black",
             bbox=dict(
                 boxstyle="round,pad=0.5",
                 facecolor="white",
-                edgecolor="blue",
+                edgecolor="black",
                 linewidth=0.9,
                 alpha=0.9
             )
@@ -125,7 +125,7 @@ def plot_scaffold_enrichment_minimal(
 
 if __name__ == "__main__":
     plot_scaffold_enrichment_minimal(
-        csv_path="shap_XGB_full_20260102_181750/scaffold_shap_with_counts_full.csv",
+        csv_path="/home/andy/andy/CYP3A4_NP_Diosmin/shap_XGB_full_20260102_181750/scaffold_shap_with_counts_full.csv",
         out_dir="enrichment_panel",
         min_n_total=3,
         y_jitter=0.015,
