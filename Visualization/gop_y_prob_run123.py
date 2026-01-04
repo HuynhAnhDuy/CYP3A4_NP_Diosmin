@@ -2,17 +2,17 @@ import os
 import pandas as pd
 
 # Thư mục chứa các file CSV
-base_path = "/home/andy/andy/CYP3A4_NP_Diosmin/Prob_CYP3A_XGB/Prob_2026-01-02_09-32-09"
+base_path = "/home/andy/andy/CYP3A4_NP_Diosmin/Prob_CYP3A4_RF/Prob_2026-01-02_10-36-03"
 
 # Định nghĩa mapping giữa "tên trong file" và "tên Model mong muốn"
 feature_configs = {
-    "all_features": "XGB_Concatenated features",
-    "ecfp": "XGB_ECFP",
-    "maccs": "XGB_MACCS keys",
-    "estate": "XGB_EState",
-    "phychem": "XGB_PCP",
-     "rdkit": "XGB_RDKit",
-    "substruct": "XGB_Substructure",
+    "all_features": "RF_Concatenated features",
+    "ecfp": "RF_ECFP",
+    "maccs": "RF_MACCS keys",
+    "estate": "RF_EState",
+    "phychem": "RF_PCP",
+     "rdkit": "RF_RDKit",
+    "substruct": "RF_Substructure",
 }
 
 all_models_dfs = []
@@ -57,7 +57,7 @@ for feature_key, model_name in feature_configs.items():
 df_out = pd.concat(all_models_dfs, ignore_index=True)
 
 # Lưu ra file CSV chung
-out_file = os.path.join(base_path, "CYP3A4_test_prob_merged_models.csv")
+out_file = os.path.join(base_path, "CYP3A4_test_prob_merged_models_RF.csv")
 df_out.to_csv(out_file, index=False)
 
 print(f"Đã lưu file gộp: {out_file}")

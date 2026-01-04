@@ -1,8 +1,0 @@
-XGB model,Specificity,Error
-ECFP,0.906,0.001
-RDKit,0.932,0.002
-MACCS keys,0.906,0.002
-PCP,0.853,0.001
-EState,0.885,0.001
-Substructure,0.822,0.002
-Concatenated features,0.93,0.004

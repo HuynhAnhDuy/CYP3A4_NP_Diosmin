@@ -1,0 +1,15 @@
+Models,BACC,Error
+RF_Concatenated features,0.773,0.004
+RF_ECFP,0.773,0.003
+RF_EState,0.772,0.001
+RF_MACCS keys,0.766,0
+RF_PCP,0.763,0.002
+RF_RDKit,0.735,0.003
+RF_Substructure,0.737,0.001
+XGB_Concatenated features,0.86,0.004
+XGB_ECFP,0.839,0.001
+XGB_EState,0.827,0.001
+XGB_MACCS keys,0.83,0.002
+XGB_PCP,0.803,0.001
+XGB_RDKit,0.808,0.002
+XGB_Substructure,0.77,0.002

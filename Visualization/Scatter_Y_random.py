@@ -8,9 +8,9 @@ CV_MODEL_NAME = f"{BASE_PREFIX}_XGB_all_features_CV"
 YR_MODEL_NAME = f"{BASE_PREFIX}_XGB_all_features_YRandom"
 
 # Thư mục 5-CV (chứa OOF summary)
-CV_OUT_DIR = "CYP3A4_XGB_all_features_CV_Validation_2026-01-02_11-39-31"
+CV_OUT_DIR = "/home/andy/andy/CYP3A4_NP_Diosmin/CYP3A4_XGB_all_features_CV_Validation_2026-01-02_11-39-31"
 # Thư mục Y-random (chứa YRandom_30runs_mean_per_run.csv)
-YR_OUT_DIR = "CYP3A4_XGB_all_features_YRandom_Validation_2026-01-02_11-58-00"
+YR_OUT_DIR = "/home/andy/andy/CYP3A4_NP_Diosmin/CYP3A4_XGB_all_features_YRandom_Validation_2026-01-02_11-58-00"
 # File metrics gốc (run trên train/test split, nhiều seed, all_features)
 ORIG_METRICS_PATH = f"{BASE_PREFIX}_XGB_feature_sets_metrics.csv"
 ORIG_FEATURE_SET_ROW = "ALL_FEATURES"   # dòng tương ứng all_features trong file summary

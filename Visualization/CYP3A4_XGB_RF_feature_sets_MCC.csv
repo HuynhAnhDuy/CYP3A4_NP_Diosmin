@@ -1,0 +1,15 @@
+Models,MCC,Error
+RF_Concatenated features,0.632,0.006
+RF_ECFP,0.627,0.004
+RF_EState,0.6,0.001
+RF_MACCS keys,0.602,0.001
+RF_PCP,0.564,0.006
+RF_RDKit,0.582,0.004
+RF_Substructure,0.464,0.001
+XGB_Concatenated features,0.727,0.008
+XGB_ECFP,0.675,0.002
+XGB_EState,0.641,0.001
+XGB_MACCS keys,0.66,0.004
+XGB_PCP,0.585,0.003
+XGB_RDKit,0.648,0.002
+XGB_Substructure,0.515,0.003

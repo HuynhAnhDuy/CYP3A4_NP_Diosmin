@@ -63,11 +63,15 @@ def plot_scaffold_enrichment_minimal(
 
     # ---- Plot ----
     fig, ax = plt.subplots(figsize=(6.8, 6.0))
-    ax.scatter(df["mean_shap"].values, y, s=sizes, alpha=alpha, color='green')
+    ax.scatter(df["mean_shap"].values, y, s=sizes, alpha=0.7, color="#124F98")
 
     # Reference lines (visual aid): dashed + slightly transparent
     ax.axvline(0.0, linestyle="--", linewidth=1.0, alpha=0.7,color='black')
-    ax.axhline(baseline, linestyle="--", linewidth=1.0, alpha=0.7,color='black')
+    #add baseline AR
+    plt.axhline(baseline, linestyle="--", linewidth=1.0, alpha=0.7, color='black')
+    plt.text(0.98, baseline + 0.025, f'Baseline active ratio = {baseline:.3f}',
+            va='center', ha='right', fontsize=12, color='black',
+            transform=plt.gca().get_yaxis_transform())
 
     ax.set_xlabel(
         f"Mean SHAP (scaffold-level, n_total ≥ {min_n_total})",
@@ -84,7 +88,7 @@ def plot_scaffold_enrichment_minimal(
     if show_counts_box:
         stats_text = (
             
-            f"Baseline AR =  {baseline:.3f} (reference)\n"
+            
             f"SHAP+ & enriched active: {len(shap_pos_ar_hi)}\n"
             f"SHAP− & enriched active: {len(shap_neg_ar_hi)}\n"
             f"SHAP− & enriched inactive: {len(shap_neg_ar_lo)}\n"
@@ -96,11 +100,11 @@ def plot_scaffold_enrichment_minimal(
             transform=ax.transAxes,
             ha="right", va="bottom",
             fontsize=12,
-            color="black",
+            color="#0C3A73",
             bbox=dict(
                 boxstyle="round,pad=0.5",
                 facecolor="white",
-                edgecolor="black",
+                edgecolor="#09264A",
                 linewidth=0.9,
                 alpha=0.9
             )

@@ -1,4 +1,4 @@
-,Accuracy,Balanced Accuracy,AUROC,AUPRC,MCC,Precision,Sensitivity,Specificity,F1
+Models,Accuracy,Balanced Accuracy,AUROC,AUPRC,MCC,Precision,Sensitivity,Specificity,F1
 ECFP,0.869 ± 0.001,0.839 ± 0.001,0.928 ± 0.001,0.853 ± 0.000,0.675 ± 0.002,0.762 ± 0.004,0.771 ± 0.004,0.906 ± 0.002,0.767 ± 0.002
 RDKIT,0.863 ± 0.001,0.808 ± 0.002,0.921 ± 0.001,0.835 ± 0.003,0.648 ± 0.002,0.797 ± 0.006,0.685 ± 0.006,0.932 ± 0.003,0.736 ± 0.002
 MACCS,0.863 ± 0.001,0.830 ± 0.002,0.922 ± 0.000,0.825 ± 0.001,0.660 ± 0.004,0.758 ± 0.002,0.753 ± 0.005,0.906 ± 0.001,0.755 ± 0.003

@@ -7,7 +7,7 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 # ====== Cấu hình ======
-csv_path = "//home/andy/andy/CYP3A4_NP_Diosmin/Visualization/CYP3A4_XGB_all_features_CV_5CV_oof_predictions.csv"
+csv_path = "/home/andy/andy/CYP3A4_NP_Diosmin/Visualization/CYP3A4_XGB_all_features_CV_5CV_oof_predictions.csv"
 output_folder = "/home/andy/andy/CYP3A4_NP_Diosmin/Visualization"
 threshold = 0.5
 labels = ['Negative', 'Positive']
